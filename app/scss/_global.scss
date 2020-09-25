@@ -12,6 +12,9 @@ body {
     line-height: 13px;
     color: #222222;
     background-color: #EEEEEE;
+    // Подстраховка, чтобы шрифты были чёткими
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 ul, li {

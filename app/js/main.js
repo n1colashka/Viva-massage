@@ -49,7 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showNumber(event) {
-        event.preventDefault();
+        const target = event.target;
+
+        if (target.classList.contains('card__phone-btn')) {
+            event.preventDefault();
+            target.closest('.card__phone').classList.add('card__phone--show');
+        }
     }
 
     menuBtn.addEventListener('click', openMenu);
@@ -65,12 +70,5 @@ document.addEventListener('DOMContentLoaded', function() {
         windowWidth = window.innerWidth;
     });
 
-    main.addEventListener('click', function(event) {
-        event.preventDefault();
-        const target = event.target;
-
-        if (target.classList.contains('card__phone-btn')) {
-            target.closest('.card__phone').classList.add('card__phone--show');
-        }
-    });
+    main.addEventListener('click', showNumber);
 });

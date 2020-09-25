@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        block meta
+            meta(charset="UTF-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1.0")
+            meta(property="og:title" content="Viva Massage")
+            meta(property="og:type" content="article")
+            meta(property="og:url" content="index.html")
+            meta(property="og:image" content="images/logo.png")
+        title #{title}
+        block styles
+            link(href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet")
+            link(href="css/libs.min.css" rel="stylesheet")
+            link(href="css/style.css" rel="stylesheet")
+
+    body
+        block header
+            include ../includes/header
+        block content
+        block footer
+        block scripts
+            script(src="js/main.js")

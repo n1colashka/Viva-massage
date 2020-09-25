@@ -1,0 +1,46 @@
+body {
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    line-height: 13px;
+    color: #222222;
+    background-color: #EEEEEE;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 1150px;
+    height: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.btn {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 15px;
+    border-radius: 2px;
+    color: #FFFFFF;
+    background-color: $accent;
+    padding: 12px 33px;
+}

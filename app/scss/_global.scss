@@ -1,3 +1,11 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: 'Archivo', sans-serif;
     font-size: 12px;
@@ -29,7 +37,7 @@ a {
 }
 
 .container {
-    width: 1150px;
+    max-width: 1150px;
     height: 100%;
     padding: 0 15px;
     margin: 0 auto;
@@ -43,4 +51,20 @@ a {
     color: #FFFFFF;
     background-color: $accent;
     padding: 12px 33px;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 50;
+    overflow: hidden;
+
+    &::before {
+        position: fixed;
+        content: "";
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, .6);
+    }
 }

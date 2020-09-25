@@ -11,16 +11,6 @@ const vendors = require('./gulp/js-vendors'),
     scripts = require('./gulp/scripts'),
     html = require('./gulp/html');
 
-// const tasksForBuild = [
-//     'html',
-//     'styles',
-//     'scripts',
-//     'bendors',
-//     'cssVendors',
-//     'imageWebp',
-//     'imageMinify',
-//     'fonts',
-// ];
 
 const build = gulp.parallel(html, styles, scripts, vendors, cssVendors, imageWebp, imageMinify, fonts);
 

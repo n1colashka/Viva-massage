@@ -29,6 +29,70 @@
     }
 }
 
+
+@media (max-width: 960px) {
+    .main {
+    
+        &__title {
+            font-size: 20px;
+            line-height: 22px;
+        }
+    }
+
+    .aside {
+        width: 200px;
+    }
+
+    .card {
+        flex-direction: column;
+        padding: 20px;
+
+        &__img {
+            width: 260px;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+    }
+}
+
+@media (max-width: 850px) {
+    .pagination {
+        &__link {
+            width: 26px;
+            height: 26px;
+    
+            &:hover {
+                font-size: 10px;
+                line-height: 11px;
+            }
+        }
+
+        &__item {
+            margin-left: 10px;
+            transition: .3s ease;
+
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(9),
+            &:nth-child(10) {
+                display: none;
+            }
+        }
+
+        &__item--current {
+            font-size: 10px;
+            line-height: 11px;
+        }
+    
+        &__link--prev,
+        &__link--next {
+            width: 64px;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 10px;
@@ -133,7 +197,64 @@
             }
         }
     }
+
+    .aside {
+        display: none;
+    }
+
+    .main {
+        padding-top: 20px;
+        padding-left: 0;
+    }
+
+    .card {
+        &__title {
+            text-transform: uppercase;
+        }
+    }
 }
+
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .card {
+        &__img {
+            margin-bottom: 10px;
+        }
+
+        &__header {
+            flex-direction: column-reverse;
+        }
+
+        &__icons {
+            margin-bottom: 10px;
+        }
+
+        &__item {
+            margin-bottom: 12px;
+        }
+
+        &__info {
+            padding-bottom: 3px;
+        }
+
+        &__footer-item {
+            margin-bottom: 14px;  
+        }
+    }
+
+    .pagination {
+        &__ellipsis {
+            margin-right: -4px;
+            margin-left: 8px;
+        }
+    }
+}
+
 
 @media (max-width: 400px) {
     .mobile-menu {

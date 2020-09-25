@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navigation = document.querySelector('.header__navigation');
     const navigationList = document.querySelector('.navigation__list');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const main = document.querySelector('.main');
     
     function openMenu() {
         navigation.classList.add('navigation--active');
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function openList(event) {
 
+        // Проверяем, чтобы меню открывалось только на моб.устройствах
         if (windowWidth <= 768) {
             const target = event.target;
             const parent = target.closest('.navigation__item');
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function openListMain(event) {
     
+        // Проверяем, чтобы меню открывалось только на моб.устройствах
         if (windowWidth <= 768) {
             const target = event.target;
             const parent = target.closest('.mobile-menu__item');
@@ -43,18 +46,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 parent.classList.add('mobile-menu__item--open');
             }  
         }
-        
+    }
+
+    function showNumber(event) {
+        event.preventDefault();
     }
 
     menuBtn.addEventListener('click', openMenu);
     menuCloseBtn.addEventListener('click', closeMenu);
 
-
     navigationList.addEventListener('click', openList);
     
+    // Проверяем, чтобы меню открывалось только на моб.устройствах
     if (windowWidth <= 768) mobileMenu.addEventListener('click', openListMain);
 
+    // Чтобы меню корректно работали при изменении разрешения экрана в реальном времени
     window.addEventListener('resize', function() {
         windowWidth = window.innerWidth;
+    });
+
+    main.addEventListener('click', function(event) {
+        event.preventDefault();
+        const target = event.target;
+
+        if (target.classList.contains('card__phone-btn')) {
+            target.closest('.card__phone').classList.add('card__phone--show');
+        }
     });
 });

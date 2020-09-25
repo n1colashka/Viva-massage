@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var navigation = document.querySelector('.header__navigation');
   var navigationList = document.querySelector('.navigation__list');
   var mobileMenu = document.querySelector('.mobile-menu');
+  var main = document.querySelector('.main');
 
   function openMenu() {
     navigation.classList.add('navigation--active');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function openList(event) {
+    // Проверяем, чтобы меню открывалось только на моб.устройствах
     if (windowWidth <= 768) {
       var target = event.target;
       var parent = target.closest('.navigation__item');
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function openListMain(event) {
+    // Проверяем, чтобы меню открывалось только на моб.устройствах
     if (windowWidth <= 768) {
       var target = event.target;
       var parent = target.closest('.mobile-menu__item');
@@ -44,11 +47,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  function showNumber(event) {
+    event.preventDefault();
+  }
+
   menuBtn.addEventListener('click', openMenu);
   menuCloseBtn.addEventListener('click', closeMenu);
-  navigationList.addEventListener('click', openList);
-  if (windowWidth <= 768) mobileMenu.addEventListener('click', openListMain);
+  navigationList.addEventListener('click', openList); // Проверяем, чтобы меню открывалось только на моб.устройствах
+
+  if (windowWidth <= 768) mobileMenu.addEventListener('click', openListMain); // Чтобы меню корректно работали при изменении разрешения экрана в реальном времени
+
   window.addEventListener('resize', function () {
     windowWidth = window.innerWidth;
+  });
+  main.addEventListener('click', function (event) {
+    event.preventDefault();
+    var target = event.target;
+
+    if (target.classList.contains('card__phone-btn')) {
+      target.closest('.card__phone').classList.add('card__phone--show');
+    }
   });
 });

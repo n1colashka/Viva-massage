@@ -42,13 +42,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       if (parent && parent.querySelector('.mobile-menu__sublist')) {
+        event.preventDefault();
         parent.classList.add('mobile-menu__item--open');
       }
     }
   }
 
   function showNumber(event) {
-    event.preventDefault();
+    var target = event.target;
+
+    if (target.classList.contains('card__phone-btn')) {
+      event.preventDefault();
+      target.closest('.card__phone').classList.add('card__phone--show');
+    }
   }
 
   menuBtn.addEventListener('click', openMenu);
@@ -60,12 +66,5 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', function () {
     windowWidth = window.innerWidth;
   });
-  main.addEventListener('click', function (event) {
-    event.preventDefault();
-    var target = event.target;
-
-    if (target.classList.contains('card__phone-btn')) {
-      target.closest('.card__phone').classList.add('card__phone--show');
-    }
-  });
+  main.addEventListener('click', showNumber);
 });

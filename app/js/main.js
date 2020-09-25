@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.classList.remove('mobile-menu__item--open')  ;
             });
             if (parent && parent.querySelector('.mobile-menu__sublist')) {
+                event.preventDefault();
                 parent.classList.add('mobile-menu__item--open');
             }  
         }

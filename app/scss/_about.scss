@@ -1,0 +1,30 @@
+.about {
+    color: #222222;
+    background-color: #ffffff;
+    border: 1px solid #DCDCDC;
+    border-radius: 4px;
+    padding: 30px;
+
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+    }
+
+    &__question {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 14px;
+    }
+
+    &__answer {
+        font-size: 14px;
+        line-height: 15px;
+    }
+}

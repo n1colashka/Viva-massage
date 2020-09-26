@@ -51,18 +51,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const parent = target.closest('.mobile-menu__item');
             const menuItems = document.querySelectorAll('.mobile-menu__item');
+
+            // Если список активный, закрываем его и выходим из функции
+            if (parent && parent.classList.contains('mobile-menu__item--open')) {
+                parent.classList.remove('mobile-menu__item--open');
+                return;
+            }
             
             // Закрываем все окна
             menuItems.forEach(item => {
                 item.classList.remove('mobile-menu__item--open');
             });
-            mobileFilter.classList.remove('mobile-filter--active');
 
+            // Открываем фильтр
             if (parent && parent.classList.contains('mobile-menu__filter')) {
                 event.preventDefault();
-                mobileFilter.classList.add('mobile-filter--active');
+                mobileFilter.classList.toggle('mobile-filter--active');
+            // Открываем выпадающие меню
             } else if (parent && parent.querySelector('.mobile-menu__sublist')) {
                 event.preventDefault();
+                mobileFilter.classList.remove('mobile-filter--active');
                 parent.classList.add('mobile-menu__item--open');
             }
 
@@ -140,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileSelectCityPart.value = sessionStorage.getItem('cityPart') || 'Select part of the city';
         mobileSelectArea.value = sessionStorage.getItem('area') || 'Select area';
 
+        // Последовательное появление фильтров
         if (sessionStorage.getItem('cityVisible')) {
             mobileFilter.classList.add('mobile-filter--active');
             mobileSelectCity.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
@@ -157,6 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
             changeOptionsArea();
+        }
+
+        // Если выбраны все пункты фильтра, закрываем его.
+        if (sessionStorage.getItem('area')) {
+            mobileFilter.classList.remove('mobile-filter--active');
         }
     }
 
@@ -217,7 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     getSelectValues();
-
 
     mobileFilter.addEventListener('change', setSelectValues);
 

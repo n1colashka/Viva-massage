@@ -8,19 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var navigationList = document.querySelector('.navigation__list');
   var mobileMenu = document.querySelector('.mobile-menu');
   var main = document.querySelector('.main');
+  var asideMenu = document.querySelector('.menu'); // Открытие меню на мобильных устройствах
 
   function openMenu() {
     navigation.classList.add('navigation--active');
     document.body.classList.add('wrapper');
-  }
+  } // Закрытие меню на мобильных устройствах
+
 
   function closeMenu() {
     navigation.classList.remove('navigation--active');
     document.body.classList.remove('wrapper');
-  }
+  } // Открытие выпадающих списков на мобильных устройствах
+
 
   function openList(event) {
-    // Проверяем, чтобы меню открывалось только на моб.устройствах
+    // Проверяем, чтобы меню открывалось только на мобильных устройствах
     if (windowWidth <= 768) {
       var target = event.target;
       var parent = target.closest('.navigation__item');
@@ -29,10 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
         parent.classList.toggle('navigation__item--open');
       }
     }
-  }
+  } // Открытие выпадающих списков Gender, Treatment, City на мобильных устройствах
+
 
   function openListMain(event) {
-    // Проверяем, чтобы меню открывалось только на моб.устройствах
+    // Проверяем, чтобы меню открывалось только на мобильных устройствах
     if (windowWidth <= 768) {
       var target = event.target;
       var parent = target.closest('.mobile-menu__item');
@@ -46,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
         parent.classList.add('mobile-menu__item--open');
       }
     }
-  }
+  } // Показать полный номер при клике
+
 
   function showNumber(event) {
     var target = event.target;
@@ -54,12 +59,23 @@ document.addEventListener('DOMContentLoaded', function () {
     if (target.classList.contains('card__phone-btn')) {
       event.preventDefault();
       target.closest('.card__phone').classList.add('card__phone--show');
+      target.style.display = 'none';
+    }
+  } // Выбор страны, города, района
+
+
+  function chooseCity(event) {
+    var target = event.target;
+
+    if (target && target.closest('li')) {
+      var parent = target.closest('li');
+      parent.classList.toggle('menu__item--active');
     }
   }
 
   menuBtn.addEventListener('click', openMenu);
   menuCloseBtn.addEventListener('click', closeMenu);
-  navigationList.addEventListener('click', openList); // Проверяем, чтобы меню открывалось только на моб.устройствах
+  navigationList.addEventListener('click', openList); // Проверяем, чтобы меню открывалось только на мобильных устройствах
 
   if (windowWidth <= 768) mobileMenu.addEventListener('click', openListMain); // Чтобы меню корректно работали при изменении разрешения экрана в реальном времени
 
@@ -67,4 +83,5 @@ document.addEventListener('DOMContentLoaded', function () {
     windowWidth = window.innerWidth;
   });
   main.addEventListener('click', showNumber);
+  asideMenu.addEventListener('click', chooseCity);
 });

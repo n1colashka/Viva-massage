@@ -1,4 +1,121 @@
 .aside {
     width: 280px;
     flex-shrink: 0;
+
+    &__menu {
+        background-color: #F8F8F8;
+        border: 1px solid #DCDCDC;
+        border-radius: 4px;
+
+        li {
+            font-size: 14px;
+            line-height: 15px;
+            color: #5c5c5c;
+            transition: .3s ease;
+    
+            a {
+                position: relative;
+                display: block;
+                padding: 12px 0 12px 50px;
+    
+                &::before,
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 12px;
+                    height: 2px;
+                    background-color: #000;
+                    left: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: .3s ease;
+                }
+    
+                &::before {
+                    transform: translateY(-50%) rotate(90deg);
+                }
+            }
+        }
+    }
+}
+
+.menu {
+
+    &__list {
+        ul {
+            display: none;
+        }
+    }
+
+    .menu__list {
+        ul {
+            margin-left: 13px;
+        }
+    }
+
+    ul.menu__sublist {
+        margin-left: 0;
+    }
+
+    &__item {
+        border-bottom: 1px solid #DCDCDC;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .menu__item--active {
+        a + ul {
+            display: block;
+        }
+    }
+
+    .menu__item--active > a {
+        &::before {
+            transform: translateY(-50%) rotate(0);
+        }
+    }
+
+    &__link {
+        font-weight: 700;
+        color: #222222;
+        background-color: #ffffff;
+    }
+
+    &__sublist {
+        .menu__item--active > a {
+            font-weight: 500;
+            color: $accent;
+        }
+    }
+}
+
+.sublist {
+    
+    &__item {
+    }
+
+
+    &__list {
+    }
+}
+.extra-list {
+
+    &__item {
+    }
+
+    &__link {
+    }
+}
+.extra-sublist {
+
+    &__item {
+    }
+
+    &__link {
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
 }

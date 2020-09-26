@@ -1,6 +1,7 @@
 .main-content {
     display: flex;
     justify-content: space-between;
+    padding-top: 30px;
 }
 
 .content-wrapper {
@@ -9,7 +10,6 @@
 }
 
 .main {
-    padding-top: 30px;
     padding-left: 20px;
 
     &__title {

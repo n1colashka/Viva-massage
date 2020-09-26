@@ -53,7 +53,6 @@
             margin-right: 0;
             margin-bottom: 30px;
         }
-
     }
 }
 
@@ -109,6 +108,9 @@
 
     .mobile-menu {
         display: flex;
+        &__list {
+            display: flex;
+        }
     }
 
     .menu-header,

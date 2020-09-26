@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var main = document.querySelector('.main');
   var asideMenu = document.querySelector('.menu');
   var mobileFilter = document.querySelector('.mobile-filter');
-  var mobileSelects = document.querySelectorAll('.mobile-filter__select select');
   var mobileSelectCountry = document.querySelector('.mobile-filter__select--country select');
   var mobileSelectCity = document.querySelector('.mobile-filter__select--city select');
   var mobileSelectCityPart = document.querySelector('.mobile-filter__select--city-part select');
@@ -168,11 +167,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (target.closest('.mobile-filter__select--country')) {
       sessionStorage.setItem('country', target.value);
-      sessionStorage.setItem('cityVisible', 'true');
+      sessionStorage.setItem('cityVisible', 'true'); // Делаем видимым нужный select
+
       mobileSelectCity.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
       if (target.value !== 'Select a country') {
-        location.reload(); // Если мы меняем страну, остальные селекты очищаютяс
+        location.reload(); // Если мы меняем страну, остальные селекты очищаются
 
         sessionStorage.removeItem('cityPartVisible');
         sessionStorage.removeItem('areaVisible');
@@ -182,11 +182,12 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     } else if (target.closest('.mobile-filter__select--city')) {
       sessionStorage.setItem('city', target.value);
-      sessionStorage.setItem('cityPartVisible', 'true');
+      sessionStorage.setItem('cityPartVisible', 'true'); // Делаем видимым нужный select
+
       mobileSelectCityPart.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
       if (target.value !== 'Select a city') {
-        location.reload(); // Если мы меняем страну, остальные селекты очищаютяс
+        location.reload(); // Если мы меняем город, остальные селекты очищаются
 
         sessionStorage.removeItem('areaVisible');
         sessionStorage.removeItem('cityPart');
@@ -194,23 +195,27 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     } else if (target.closest('.mobile-filter__select--city-part')) {
       sessionStorage.setItem('cityPart', target.value);
-      sessionStorage.setItem('areaVisible', 'true');
+      sessionStorage.setItem('areaVisible', 'true'); // Делаем видимым нужный select
+
       mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
       if (target.value !== 'Select part of the city') {
         location.reload();
       }
     } else if (target.closest('.mobile-filter__select--area')) {
-      sessionStorage.setItem('area', target.value);
+      sessionStorage.setItem('area', target.value); // Делаем видимым нужный select
+
       mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
       if (target.value !== 'Select area') {
         location.reload();
       }
     }
-  }
+  } // При загрузке страницы устанавливаем значения из Session Storage
 
-  getSelectValues();
+
+  getSelectValues(); // Обработчики
+
   mobileFilter.addEventListener('change', setSelectValues);
   menuBtn.addEventListener('click', openMenu);
   menuCloseBtn.addEventListener('click', closeMenu);

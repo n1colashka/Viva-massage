@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const main = document.querySelector('.main');
     const asideMenu = document.querySelector('.menu');
     const mobileFilter = document.querySelector('.mobile-filter');
-    const mobileSelects = document.querySelectorAll('.mobile-filter__select select');
     const mobileSelectCountry = document.querySelector('.mobile-filter__select--country select');
     const mobileSelectCity = document.querySelector('.mobile-filter__select--city select');
     const mobileSelectCityPart = document.querySelector('.mobile-filter__select--city-part select');
@@ -183,11 +182,12 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.setItem('country', target.value);
             sessionStorage.setItem('cityVisible', 'true');
 
+            // Делаем видимым нужный select
             mobileSelectCity.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
             if (target.value !== 'Select a country') {
                 location.reload();
-                // Если мы меняем страну, остальные селекты очищаютяс
+                // Если мы меняем страну, остальные селекты очищаются
                 sessionStorage.removeItem('cityPartVisible');
                 sessionStorage.removeItem('areaVisible');
                 sessionStorage.removeItem('cityPart');
@@ -199,11 +199,12 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.setItem('city', target.value);
             sessionStorage.setItem('cityPartVisible', 'true');
             
+            // Делаем видимым нужный select
             mobileSelectCityPart.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
             if (target.value !== 'Select a city') {
                 location.reload();
-                // Если мы меняем страну, остальные селекты очищаютяс
+                // Если мы меняем город, остальные селекты очищаются
                 sessionStorage.removeItem('areaVisible');
                 sessionStorage.removeItem('cityPart');
                 sessionStorage.removeItem('area');
@@ -213,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.setItem('cityPart', target.value);
             sessionStorage.setItem('areaVisible', 'true');
             
+            // Делаем видимым нужный select
             mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
             if (target.value !== 'Select part of the city') {
@@ -222,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             sessionStorage.setItem('area', target.value);
             
+            // Делаем видимым нужный select
             mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
 
             if (target.value !== 'Select area') {
@@ -230,8 +233,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // При загрузке страницы устанавливаем значения из Session Storage
     getSelectValues();
 
+    // Обработчики
     mobileFilter.addEventListener('change', setSelectValues);
 
     menuBtn.addEventListener('click', openMenu);

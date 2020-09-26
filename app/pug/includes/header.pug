@@ -6,33 +6,34 @@ header.header
                 .header__panel
                     a(href="index.html").header__logo.logo
                         img(src="images/logo.svg", alt="Логотип Viva massage")
-                    ul.header__mobile-menu.mobile-menu
-                        li.mobile-menu__item
-                            a(href="#").mobile-menu__link
-                                include ../../images/gender-icon.svg
-                                | Gender
-                            ul.mobile-menu__sublist
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Help
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Agencies
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Male Therapists
-                        li.mobile-menu__item
-                            a(href="#").mobile-menu__link
-                                include ../../images/treatment-icon.svg
-                                | Treatment
-                            ul.mobile-menu__sublist
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Help
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Agencies
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Male Therapists
-                        li.mobile-menu__item.mobile-menu__filter
-                            a(href="#").mobile-menu__link
-                                include ../../images/city-icon.svg
-                                | City
+                    .header__mobile-menu.mobile-menu
+                        ul.mobile-menu__list
+                            li.mobile-menu__item
+                                a(href="#").mobile-menu__link
+                                    include ../../images/gender-icon.svg
+                                    | Gender
+                                ul.mobile-menu__sublist
+                                    li.mobile-menu__subitem
+                                        a.mobile-menu__link(href="#") Help
+                                    li.mobile-menu__subitem
+                                        a.mobile-menu__link(href="#") Agencies
+                                    li.mobile-menu__subitem
+                                        a.mobile-menu__link(href="#") Male Therapists
+                            li.mobile-menu__item
+                                a(href="#").mobile-menu__link
+                                    include ../../images/treatment-icon.svg
+                                    | Treatment
+                                ul.mobile-menu__sublist
+                                    li.mobile-menu__subitem
+                                        a.mobile-menu__link(href="#") Help
+                                    li.mobile-menu__subitem
+                                        a.mobile-menu__link(href="#") Agencies
+                                    li.mobile-menu__subitem
+                                        a.mobile-menu__link(href="#") Male Therapists
+                            li.mobile-menu__item.mobile-menu__filter
+                                a(href="#").mobile-menu__link
+                                    include ../../images/city-icon.svg
+                                    | City
                         button.mobile-menu__btn
                             span  
                     nav.header__navigation.navigation

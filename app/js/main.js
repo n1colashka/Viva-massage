@@ -70,6 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const target = event.target;
         if (target && target.closest('li')) {
             const parent = target.closest('li');
+
+            parent.closest('ul').querySelectorAll('li').forEach(item => {
+                item.classList.remove('menu__item--active');
+            });
+            
             parent.classList.toggle('menu__item--active');
         }
     }

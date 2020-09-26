@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (target && target.closest('li')) {
       var parent = target.closest('li');
+      parent.closest('ul').querySelectorAll('li').forEach(function (item) {
+        item.classList.remove('menu__item--active');
+      });
       parent.classList.toggle('menu__item--active');
     }
   }

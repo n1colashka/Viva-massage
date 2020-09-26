@@ -64,10 +64,8 @@
         }
     }
 
-    .menu__item--active {
-        a + ul {
-            display: block;
-        }
+    .menu__item--active > ul {
+        display: block;
     }
 
     .menu__item--active > a {

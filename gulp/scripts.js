@@ -6,7 +6,9 @@ const babel = require('gulp-babel');
 module.exports = function script() {
     return gulp.src('app/js/*.js')
         .pipe(babel({
-            presets: ['@babel/env']
+            presets: [
+                '@babel/env',
+            ]
         }))
         .pipe(gulp.dest('dist/js/'));
 };

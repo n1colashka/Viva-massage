@@ -33,39 +33,6 @@ header.header
                             a(href="#").mobile-menu__link
                                 include ../../images/city-icon.svg
                                 | City
-                            ul.mobile-menu__sublist.mobile-filter
-                                li.mobile-filter__item.mobile-filter__item--active
-                                    .mobile-filter__select.mobile-filter__select--country
-                                        select(name="selectCountry")
-                                            option(selected, disabled) Select a country
-                                            option(value="England") England
-                                            option(value="Wales") Wales
-                                            option(value="Scotland") Scotland
-                                            option(value="N.Ireland") N.Ireland
-                                li.mobile-filter__item.mobile-filter__item--active
-                                    .mobile-filter__select.mobile-filter__select--city
-                                        select(name="selectCity")
-                                            option(selected, disabled) Select a city
-                                            option(value="England") London
-                                            option(value="Wales") Wales
-                                            option(value="Scotland") Scotland
-                                            option(value="N.Ireland") N.Ireland
-                                li.mobile-filter__item.mobile-filter__item--active
-                                    .mobile-filter__select.mobile-filter__select--city-paty
-                                        select(name="selectCityPart")
-                                            option(selected, disabled) Select part of the city
-                                            option(value="England") Mayfair
-                                            option(value="Wales") Wales
-                                            option(value="Scotland") Scotland
-                                            option(value="N.Ireland") N.Ireland
-                                li.mobile-filter__item.mobile-filter__item--active
-                                    .mobile-filter__select.mobile-filter__select--area
-                                        select(name="selectArea")
-                                            option(selected, disabled) Select area
-                                            option(value="England") Knightsbridge
-                                            option(value="Wales") Wales
-                                            option(value="Scotland") Scotland
-                                            option(value="N.Ireland") N.Ireland
                         button.mobile-menu__btn
                             span  
                     nav.header__navigation.navigation
@@ -122,3 +89,63 @@ header.header
                     a(href="#").header__login-item
                         img(src="images/add-icon.svg", alt="Post An Ad")
                         | Post An Ad
+                ul.mobile-filter
+                    li.mobile-filter__item.mobile-filter__item--active
+                        .mobile-filter__select.mobile-filter__select--country
+                            select(name="selectCountry")
+                                option(selected, disabled) Select a country
+                                option(value="England") England
+                                option(value="Wales") Wales
+                                option(value="Scotland") Scotland
+                                option(value="N.Ireland") N.Ireland
+                    li.mobile-filter__item
+                        .mobile-filter__select.mobile-filter__select--city
+                            select(name="selectCity")
+                                option(selected, disabled) Select a city
+                                option(value="London", data-city="England") London
+                                option(value="Manchester", data-city="England") Manchester
+                                option(value="York", data-city="England") York
+                                option(value="Liverpool", data-city="England") Liverpool
+                                option(value="Birmingham", data-city="England") Birmingham
+                                option(value="Cambridge", data-city="England") Cambridge
+                                option(value="Wales1", data-city="Wales") Wales city 1
+                                option(value="Wales2", data-city="Wales") Wales city 2
+                                option(value="Wales3", data-city="Wales") Wales city 3
+                                option(value="Scotland1", data-city="Scotland") Scotland city 1
+                                option(value="Scotland2", data-city="Scotland") Scotland city 2
+                                option(value="Scotland3", data-city="Scotland") Scotland city 3
+                                option(value="Ireland1", data-city="N.Ireland") N.Ireland city 1
+                                option(value="Ireland2", data-city="N.Ireland") N.Ireland city 2
+                                option(value="Ireland3", data-city="N.Ireland") N.Ireland city 3
+                    li.mobile-filter__item
+                        .mobile-filter__select.mobile-filter__select--city-part
+                            select(name="selectCityPart")
+                                option(selected, disabled) Select part of the city
+                                option(value="Mayfair", data-city-part="London") Mayfair
+                                option(value="Belgravia", data-city-part="London") Belgravia
+                                option(value="Knightsbridge", data-city-part="London") Knightsbridge
+                                option(value="Manchester1", data-city-part="Manchester") Manchester part 1
+                                option(value="Manchester2", data-city-part="Manchester") Manchester part 2
+                                option(value="Manchester3", data-city-part="Manchester") Manchester part 3
+                                option(value="York1", data-city-part="York") York
+                                option(value="Liverpool1", data-city-part="Liverpool") Liverpool part 1
+                                option(value="Birmingham1", data-city-part="Birmingham") Birmingham part 1
+                                option(value="Cambridge1", data-city-part="Cambridge") Cambridge part 1
+                                option(value="Wales11", data-city-part="Wales1") Wales part 1
+                                option(value="Scotland11", data-city-part="Scotland1") Scotland part 1
+                                option(value="Ireland11", data-city-part="Ireland1") N.Ireland part 1
+                    li.mobile-filter__item
+                        .mobile-filter__select.mobile-filter__select--area
+                            select(name="selectArea")
+                                option(selected, disabled) Select area
+                                option(value="Knightsbridge2", data-area="Mayfair") Knightsbridge
+                                option(value="Belgravia2", data-area="Belgravia") Belgravia 1 area
+                                option(value="Knightsbridge2", data-area="Knightsbridge") Knightsbridge 1 area
+                                option(value="Manchester2", data-area="Manchester1") Manchester 1 area
+                                option(value="York2", data-area="York1") York 1 area
+                                option(value="Liverpool2", data-city-rea="Liverpool1") Liverpool 1 area
+                                option(value="Birmingham2", data-area="Birmingham1") Birmingham 1 area
+                                option(value="Cambridge2", data-area="Cambridge1") Birmingham 1 area
+                                option(value="Wales22", data-area="Wales11") Wales 1 area
+                                option(value="Scotland22", data-area="Scotland11") Scotland 1 area
+                                option(value="Ireland22", data-area="Ireland11") Ireland 1 area

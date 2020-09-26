@@ -363,7 +363,9 @@
 }
 
 
+
 .mobile-filter {
+    display: none;
     background-color: #ffffff;
     width: 90%;
     left: 0;
@@ -371,6 +373,10 @@
     margin: 0 auto;
     padding: 5px;
     border-radius: 4px;
+
+    .hidden {
+        display: none;
+    }
 
     &__select {
         position: relative;
@@ -386,7 +392,7 @@
             font-weight: bold;
             appearance: none;
         }
-        
+
         &::before {
             position: absolute;
             content: "";
@@ -418,6 +424,10 @@
         display: block;
     }
 
+    &.mobile-filter--active {
+        display: block;
+    }
+
     &__item {
         display: none;
         border-radius: 4px;
@@ -446,8 +456,5 @@
     &__list-item {
         text-align: left;
         color: #5c5c5c;
-    }
-
-    &__list-link {
     }
 }

@@ -67,52 +67,6 @@
                   fill="#1E1E1E" />
                 </svg>
                 City</a>
-              <ul class="mobile-menu__sublist mobile-filter">
-                <li class="mobile-filter__item mobile-filter__item--active">
-                  <div class="mobile-filter__select mobile-filter__select--country">
-                    <select name="selectCountry">
-                      <option selected="selected" disabled="disabled">Select a country</option>
-                      <option value="England">England</option>
-                      <option value="Wales">Wales</option>
-                      <option value="Scotland">Scotland</option>
-                      <option value="N.Ireland">N.Ireland</option>
-                    </select>
-                  </div>
-                </li>
-                <li class="mobile-filter__item mobile-filter__item--active">
-                  <div class="mobile-filter__select mobile-filter__select--city">
-                    <select name="selectCity">
-                      <option selected="selected" disabled="disabled">Select a city</option>
-                      <option value="England">London</option>
-                      <option value="Wales">Wales</option>
-                      <option value="Scotland">Scotland</option>
-                      <option value="N.Ireland">N.Ireland</option>
-                    </select>
-                  </div>
-                </li>
-                <li class="mobile-filter__item mobile-filter__item--active">
-                  <div class="mobile-filter__select mobile-filter__select--city-paty">
-                    <select name="selectCityPart">
-                      <option selected="selected" disabled="disabled">Select part of the city</option>
-                      <option value="England">Mayfair</option>
-                      <option value="Wales">Wales</option>
-                      <option value="Scotland">Scotland</option>
-                      <option value="N.Ireland">N.Ireland</option>
-                    </select>
-                  </div>
-                </li>
-                <li class="mobile-filter__item mobile-filter__item--active">
-                  <div class="mobile-filter__select mobile-filter__select--area">
-                    <select name="selectArea">
-                      <option selected="selected" disabled="disabled">Select area</option>
-                      <option value="England">Knightsbridge</option>
-                      <option value="Wales">Wales</option>
-                      <option value="Scotland">Scotland</option>
-                      <option value="N.Ireland">N.Ireland</option>
-                    </select>
-                  </div>
-                </li>
-              </ul>
             </li>
             <button class="mobile-menu__btn"><span> </span>
             </button>
@@ -180,6 +134,79 @@
           <a class="header__login-item" href="#">
             <img src="images/add-icon.svg" alt="Post An Ad" />Post An Ad</a>
         </div>
+        <ul class="mobile-filter">
+          <li class="mobile-filter__item mobile-filter__item--active">
+            <div class="mobile-filter__select mobile-filter__select--country">
+              <select name="selectCountry">
+                <option selected="selected" disabled="disabled">Select a country</option>
+                <option value="England">England</option>
+                <option value="Wales">Wales</option>
+                <option value="Scotland">Scotland</option>
+                <option value="N.Ireland">N.Ireland</option>
+              </select>
+            </div>
+          </li>
+          <li class="mobile-filter__item">
+            <div class="mobile-filter__select mobile-filter__select--city">
+              <select name="selectCity">
+                <option selected="selected" disabled="disabled">Select a city</option>
+                <option value="London" data-city="England">London</option>
+                <option value="Manchester" data-city="England">Manchester</option>
+                <option value="York" data-city="England">York</option>
+                <option value="Liverpool" data-city="England">Liverpool</option>
+                <option value="Birmingham" data-city="England">Birmingham</option>
+                <option value="Cambridge" data-city="England">Cambridge</option>
+                <option value="Wales1" data-city="Wales">Wales city 1</option>
+                <option value="Wales2" data-city="Wales">Wales city 2</option>
+                <option value="Wales3" data-city="Wales">Wales city 3</option>
+                <option value="Scotland1" data-city="Scotland">Scotland city 1</option>
+                <option value="Scotland2" data-city="Scotland">Scotland city 2</option>
+                <option value="Scotland3" data-city="Scotland">Scotland city 3</option>
+                <option value="Ireland1" data-city="N.Ireland">N.Ireland city 1</option>
+                <option value="Ireland2" data-city="N.Ireland">N.Ireland city 2</option>
+                <option value="Ireland3" data-city="N.Ireland">N.Ireland city 3</option>
+              </select>
+            </div>
+          </li>
+          <li class="mobile-filter__item">
+            <div class="mobile-filter__select mobile-filter__select--city-part">
+              <select name="selectCityPart">
+                <option selected="selected" disabled="disabled">Select part of the city</option>
+                <option value="Mayfair" data-city-part="London">Mayfair</option>
+                <option value="Belgravia" data-city-part="London">Belgravia</option>
+                <option value="Knightsbridge" data-city-part="London">Knightsbridge</option>
+                <option value="Manchester1" data-city-part="Manchester">Manchester part 1</option>
+                <option value="Manchester2" data-city-part="Manchester">Manchester part 2</option>
+                <option value="Manchester3" data-city-part="Manchester">Manchester part 3</option>
+                <option value="York1" data-city-part="York">York</option>
+                <option value="Liverpool1" data-city-part="Liverpool">Liverpool part 1</option>
+                <option value="Birmingham1" data-city-part="Birmingham">Birmingham part 1</option>
+                <option value="Cambridge1" data-city-part="Cambridge">Cambridge part 1</option>
+                <option value="Wales11" data-city-part="Wales1">Wales part 1</option>
+                <option value="Scotland11" data-city-part="Scotland1">Scotland part 1</option>
+                <option value="Ireland11" data-city-part="Ireland1">N.Ireland part 1</option>
+              </select>
+            </div>
+          </li>
+          <li class="mobile-filter__item">
+            <div class="mobile-filter__select mobile-filter__select--area">
+              <select name="selectArea">
+                <option selected="selected" disabled="disabled">Select area</option>
+                <option value="Knightsbridge2" data-area="Mayfair">Knightsbridge</option>
+                <option value="Belgravia2" data-area="Belgravia">Belgravia 1 area</option>
+                <option value="Knightsbridge2" data-area="Knightsbridge">Knightsbridge 1 area</option>
+                <option value="Manchester2" data-area="Manchester1">Manchester 1 area</option>
+                <option value="York2" data-area="York1">York 1 area</option>
+                <option value="Liverpool2" data-city-rea="Liverpool1">Liverpool 1 area</option>
+                <option value="Birmingham2" data-area="Birmingham1">Birmingham 1 area</option>
+                <option value="Cambridge2" data-area="Cambridge1">Birmingham 1 area</option>
+                <option value="Wales22" data-area="Wales11">Wales 1 area</option>
+                <option value="Scotland22" data-area="Scotland11">Scotland 1 area</option>
+                <option value="Ireland22" data-area="Ireland11">Ireland 1 area</option>
+              </select>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </header>

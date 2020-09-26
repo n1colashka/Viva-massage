@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var mobileMenu = document.querySelector('.mobile-menu');
   var main = document.querySelector('.main');
   var asideMenu = document.querySelector('.menu');
-  var mobileFilter = document.querySelector('.mobile-filter'); // Открытие меню на мобильных устройствах
+  var mobileFilter = document.querySelector('.mobile-filter');
+  var mobileSelects = document.querySelectorAll('.mobile-filter__select select');
+  var mobileSelectCountry = document.querySelector('.mobile-filter__select--country select');
+  var mobileSelectCity = document.querySelector('.mobile-filter__select--city select');
+  var mobileSelectCityPart = document.querySelector('.mobile-filter__select--city-part select');
+  var mobileSelectArea = document.querySelector('.mobile-filter__select--area select'); // Открытие меню на мобильных устройствах
 
   function openMenu() {
     navigation.classList.add('navigation--active');
@@ -42,12 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (windowWidth <= 768) {
       var target = event.target;
       var parent = target.closest('.mobile-menu__item');
-      var menuItems = document.querySelectorAll('.mobile-menu__item');
+      var menuItems = document.querySelectorAll('.mobile-menu__item'); // Закрываем все окна
+
       menuItems.forEach(function (item) {
         item.classList.remove('mobile-menu__item--open');
       });
+      mobileFilter.classList.remove('mobile-filter--active');
 
-      if (parent && parent.querySelector('.mobile-menu__sublist')) {
+      if (parent && parent.classList.contains('mobile-menu__filter')) {
+        event.preventDefault();
+        mobileFilter.classList.add('mobile-filter--active');
+      } else if (parent && parent.querySelector('.mobile-menu__sublist')) {
         event.preventDefault();
         parent.classList.add('mobile-menu__item--open');
       }
@@ -86,8 +96,111 @@ document.addEventListener('DOMContentLoaded', function () {
       var parent = target.closest('.mobile-filter__item');
       parent.classList.toggle('mobile-filter__item--open');
     }
+  } // Скрываем неподходящие города
+
+
+  function changeOptionsCity() {
+    mobileSelectCity.querySelectorAll('option').forEach(function (item) {
+      if (item.dataset.city !== mobileSelectCountry.value) {
+        item.classList.add('hidden');
+      }
+    });
+  } // Скрываем неподходящие части города
+
+
+  function changeOptionsCityPart() {
+    mobileSelectCityPart.querySelectorAll('option').forEach(function (item) {
+      if (item.dataset.cityPart !== mobileSelectCity.value) {
+        item.classList.add('hidden');
+      }
+    });
+  } // Скрываем неподходящие районы
+
+
+  function changeOptionsArea() {
+    mobileSelectArea.querySelectorAll('option').forEach(function (item) {
+      if (item.dataset.area !== mobileSelectCityPart.value) {
+        item.classList.add('hidden');
+      }
+    });
+  } // При загрузке устанавливаем значения, которые вводил пользователь раньше
+
+
+  function getSelectValues() {
+    mobileSelectCountry.value = sessionStorage.getItem('country') || 'Select a country';
+    mobileSelectCity.value = sessionStorage.getItem('city') || 'Select a city';
+    mobileSelectCityPart.value = sessionStorage.getItem('cityPart') || 'Select part of the city';
+    mobileSelectArea.value = sessionStorage.getItem('area') || 'Select area';
+
+    if (sessionStorage.getItem('cityVisible')) {
+      mobileFilter.classList.add('mobile-filter--active');
+      mobileSelectCity.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+      changeOptionsCity();
+    }
+
+    if (sessionStorage.getItem('cityPartVisible')) {
+      mobileFilter.classList.add('mobile-filter--active');
+      mobileSelectCityPart.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+      changeOptionsCityPart();
+    }
+
+    if (sessionStorage.getItem('areaVisible')) {
+      mobileFilter.classList.add('mobile-filter--active');
+      mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+      changeOptionsArea();
+    }
+  } // Сохраняем значение страны
+
+
+  function setSelectValues(event) {
+    var target = event.target;
+
+    if (target.closest('.mobile-filter__select--country')) {
+      sessionStorage.setItem('country', target.value);
+      sessionStorage.setItem('cityVisible', 'true');
+      mobileSelectCity.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+
+      if (target.value !== 'Select a country') {
+        location.reload(); // Если мы меняем страну, остальные селекты очищаютяс
+
+        sessionStorage.removeItem('cityPartVisible');
+        sessionStorage.removeItem('areaVisible');
+        sessionStorage.removeItem('cityPart');
+        sessionStorage.removeItem('area');
+        sessionStorage.removeItem('city');
+      }
+    } else if (target.closest('.mobile-filter__select--city')) {
+      sessionStorage.setItem('city', target.value);
+      sessionStorage.setItem('cityPartVisible', 'true');
+      mobileSelectCityPart.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+
+      if (target.value !== 'Select a city') {
+        location.reload(); // Если мы меняем страну, остальные селекты очищаютяс
+
+        sessionStorage.removeItem('areaVisible');
+        sessionStorage.removeItem('cityPart');
+        sessionStorage.removeItem('area');
+      }
+    } else if (target.closest('.mobile-filter__select--city-part')) {
+      sessionStorage.setItem('cityPart', target.value);
+      sessionStorage.setItem('areaVisible', 'true');
+      mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+
+      if (target.value !== 'Select part of the city') {
+        location.reload();
+      }
+    } else if (target.closest('.mobile-filter__select--area')) {
+      sessionStorage.setItem('area', target.value);
+      mobileSelectArea.closest('.mobile-filter__item').classList.add('mobile-filter__item--active');
+
+      if (target.value !== 'Select area') {
+        location.reload();
+      }
+    }
   }
 
+  getSelectValues();
+  mobileFilter.addEventListener('change', setSelectValues);
   menuBtn.addEventListener('click', openMenu);
   menuCloseBtn.addEventListener('click', closeMenu);
   navigationList.addEventListener('click', openList); // Проверяем, чтобы меню открывались только на мобильных устройствах

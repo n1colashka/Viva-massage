@@ -69,7 +69,7 @@ button {
 
 .wrapper {
     position: relative;
-    z-index: 50;
+    z-index: 150;
     overflow: hidden;
 
     &::before {
@@ -79,6 +79,7 @@ button {
         width: 100%;
         left: 0;
         top: 0;
+        z-index: 999;
         background-color: rgba(0, 0, 0, .6);
     }
 }

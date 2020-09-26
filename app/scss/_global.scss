@@ -40,6 +40,10 @@ a {
     color: inherit;
 }
 
+button {
+    cursor: pointer;
+}
+
 .container {
     max-width: 1150px;
     height: 100%;
@@ -55,6 +59,12 @@ a {
     color: #FFFFFF;
     background-color: $accent;
     padding: 12px 33px;
+    border: none;
+    transition: .3s ease;
+
+    &:hover {
+        background-color: #bb0859;
+    }
 }
 
 .wrapper {
@@ -71,4 +81,40 @@ a {
         top: 0;
         background-color: rgba(0, 0, 0, .6);
     }
+}
+
+.socials {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #6B6B6B;
+        border-radius: 4px;
+        margin-left: 30px;
+        transition: .3s ease;
+
+        &:hover {
+            background-color: #222222;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        padding: 5px;
+        img {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
 }

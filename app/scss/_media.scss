@@ -17,7 +17,8 @@
         }
 
         &__panel {
-            border: 2px solid #e5e5e5;
+            border-top: 2px solid #e5e5e5;
+            border-bottom: 2px solid #e5e5e5;
             padding: 15px 10px;
         }
     }
@@ -81,7 +82,8 @@
             }
         }
 
-        &__item--current {
+        .pagination__item--current {
+            display: block;
             font-size: 10px;
             line-height: 11px;
         }
@@ -89,6 +91,16 @@
         &__link--prev,
         &__link--next {
             width: 64px;
+        }
+    }
+
+    .footer {
+        &__nav {
+            display: flex;
+    
+            .footer__item:not(:first-child) {
+                margin-left: 50px;
+            }
         }
     }
 }
@@ -174,6 +186,10 @@
         &__logo {
             margin-left: 0;
         }
+
+        &__login {
+            margin-right: 20px;
+        }
     }
 
     .about {
@@ -212,6 +228,69 @@
             text-transform: uppercase;
         }
     }
+
+    .lead {
+        background-image: url('../images/lead-bg-mobile.jpg');
+        margin-top: 20px;
+
+        &__title {
+            font-size: 30px;
+            line-height: 33px;
+        }
+    }
+
+    .footer {
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__label {
+            max-width: 100%;
+        }
+
+        &__btn {
+            width: 180px;
+        }
+
+        .socials {
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+            &__item {
+                margin-left: 5px;
+            }
+        }
+        
+        &__item {
+            &:last-child {
+                align-items: center;
+                text-align: center;
+                order: 2;
+                margin-bottom: 30px;
+            }
+            &:first-child {
+                order: 3;
+            }
+        }
+
+        &__nav {
+            margin-bottom: 25px;
+
+            .footer__item {
+                margin-left: 45px;
+                &:last-child {
+                    align-items: flex-start;
+                    text-align: left;
+                    order: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            .footer__item:not(:first-child) {
+                margin-left: 0;
+            }
+        }
+    }
 }
 
 
@@ -219,6 +298,12 @@
 
     .container {
         padding: 0 10px;
+    }
+
+    .header {
+        &__inner {
+            margin: 0 -10px;
+        }
     }
 
     .card {

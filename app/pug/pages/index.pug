@@ -1,7 +1,7 @@
 extends ../templates/main.pug
 
 block title
-    title Главная - Viva Massage
+    title Main page - Viva Massage
 
 block content
     .container
@@ -399,9 +399,9 @@ block content
                                 a(href="#").pagination__link 1
                             li.pagination__item
                                 a(href="#").pagination__link 2
-                            li.pagination__item
-                                a(href="#").pagination__link 3
                             li.pagination__item.pagination__item--current
+                                a(href="#").pagination__link 3
+                            li.pagination__item
                                 a(href="#").pagination__link 4
                             li.pagination__item
                                 a(href="#").pagination__link 5
@@ -415,4 +415,9 @@ block content
                             li.pagination__item
                                 a(href="#").pagination__link.pagination__link--next next
                                     include ../../images/arrow-right.svg
-
+    section.lead
+        .container
+            .lead__inner
+                h4.lead__title Are you therapist?
+                .lead__subtitle Post your ad. It’s free!
+                a(href="#").lead__btn.btn Post An Ad

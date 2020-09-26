@@ -4,12 +4,15 @@ html(lang="en")
         block meta
             meta(charset="UTF-8")
             meta(name="viewport" content="width=device-width, initial-scale=1.0")
+            meta(name="description", content="Thai Massage is an ancient massage style that combines yoga, Indian Ayurvedic principles and acupressure.The therapist")
             meta(property="og:title" content="Viva Massage")
+            meta(property="og:description" content="Thai Massage is an ancient massage style that combines yoga, Indian Ayurvedic principles and acupressure.The therapist")
             meta(property="og:type" content="article")
             meta(property="og:url" content="index.html")
             meta(property="og:image" content="images/logo.png")
+            meta(property="og:site_name" content="Viva Massage")
         block title
-            title Главная
+            title Main
         block styles
             link(href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet")
             link(href="css/libs.min.css" rel="stylesheet")
@@ -20,5 +23,6 @@ html(lang="en")
             include ../includes/header
         block content
         block footer
+            include ../includes/footer
         block scripts
             script(src="js/main.js")

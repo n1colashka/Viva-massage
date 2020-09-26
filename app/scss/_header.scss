@@ -264,7 +264,6 @@
     }
 }
 
-
 .menu-header,
 .menu-footer {
     display: none;
@@ -327,30 +326,4 @@
             margin-bottom: 0;
         }
     }
-}
-
-.socials {
-
-    display: flex;
-    justify-content: center;
-
-    &__item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #6B6B6B;
-        border-radius: 4px;
-        width: 30px;
-        height: 30px;
-        margin-left: 30px;
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-
-    &__link {
-        padding: 5px;
-    }
-
 }

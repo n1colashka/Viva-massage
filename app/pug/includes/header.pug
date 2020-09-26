@@ -29,17 +29,43 @@ header.header
                                     a.mobile-menu__link(href="#") Agencies
                                 li.mobile-menu__subitem
                                     a.mobile-menu__link(href="#") Male Therapists
-                        li.mobile-menu__item
+                        li.mobile-menu__item.mobile-menu__filter
                             a(href="#").mobile-menu__link
                                 include ../../images/city-icon.svg
                                 | City
-                            ul.mobile-menu__sublist
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Help
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Agencies
-                                li.mobile-menu__subitem
-                                    a.mobile-menu__link(href="#") Male Therapists
+                            ul.mobile-menu__sublist.mobile-filter
+                                li.mobile-filter__item.mobile-filter__item--active
+                                    .mobile-filter__select.mobile-filter__select--country
+                                        select
+                                            option(selected, disabled) Select a country
+                                            option(value="England") England
+                                            option(value="Wales") Wales
+                                            option(value="Scotland") Scotland
+                                            option(value="N.Ireland") N.Ireland
+                                li.mobile-filter__item.mobile-filter__item--active
+                                    .mobile-filter__select.mobile-filter__select--country
+                                        select
+                                            option(selected, disabled) Select a city
+                                            option(value="England") London
+                                            option(value="Wales") Wales
+                                            option(value="Scotland") Scotland
+                                            option(value="N.Ireland") N.Ireland
+                                li.mobile-filter__item.mobile-filter__item--active
+                                    .mobile-filter__select.mobile-filter__select--country
+                                        select
+                                            option(selected, disabled) Select part of the city
+                                            option(value="England") Mayfair
+                                            option(value="Wales") Wales
+                                            option(value="Scotland") Scotland
+                                            option(value="N.Ireland") N.Ireland
+                                li.mobile-filter__item.mobile-filter__item--active
+                                    .mobile-filter__select.mobile-filter__select--country
+                                        select
+                                            option(selected, disabled) Select area
+                                            option(value="England") Knightsbridge
+                                            option(value="Wales") Wales
+                                            option(value="Scotland") Scotland
+                                            option(value="N.Ireland") N.Ireland
                         button.mobile-menu__btn
                             span  
                     nav.header__navigation.navigation

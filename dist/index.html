@@ -58,7 +58,7 @@
                 </li>
               </ul>
             </li>
-            <li class="mobile-menu__item">
+            <li class="mobile-menu__item mobile-menu__filter">
               <a class="mobile-menu__link" href="#">
                 <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.99998 2.40002C5.32188 2.40002 4.659 2.5877 4.09517 2.93932C3.53135 3.29094 3.0919 3.79071 2.8324 4.37544C2.5729 4.96016 2.505 5.60357 2.63729 6.22431C2.76958 6.84505 3.09612 7.41524 3.57562 7.86277C4.05511 8.31029 4.66602 8.61506 5.3311 8.73854C5.99618 8.86201 6.68555 8.79864 7.31204 8.55644C7.93853 8.31424 8.474 7.90409 8.85073 7.37785C9.22747 6.85161 9.42855 6.23292 9.42855 5.60002C9.42855 4.75133 9.06733 3.9374 8.42435 3.33728C7.78137 2.73717 6.9093 2.40002 5.99998 2.40002ZM5.99998 7.6831C5.55856 7.6831 5.12705 7.56093 4.76003 7.33203C4.393 7.10314 4.10694 6.77781 3.93801 6.39718C3.76909 6.01655 3.72489 5.59771 3.81101 5.19364C3.89712 4.78956 4.10969 4.41839 4.42182 4.12707C4.73395 3.83575 5.13163 3.63735 5.56457 3.55698C5.99751 3.4766 6.44626 3.51785 6.85408 3.67552C7.2619 3.83318 7.61047 4.10017 7.85571 4.44273C8.10095 4.78529 8.23184 5.18803 8.23184 5.60002C8.23026 6.15152 7.99442 6.67992 7.57604 7.06937C7.15765 7.45881 6.59087 7.67751 5.99998 7.67751V7.6831Z"
@@ -67,12 +67,50 @@
                   fill="#1E1E1E" />
                 </svg>
                 City</a>
-              <ul class="mobile-menu__sublist">
-                <li class="mobile-menu__subitem"><a class="mobile-menu__link" href="#">Help</a>
+              <ul class="mobile-menu__sublist mobile-filter">
+                <li class="mobile-filter__item mobile-filter__item--active">
+                  <div class="mobile-filter__select mobile-filter__select--country">
+                    <select>
+                      <option selected="selected" disabled="disabled">Select a country</option>
+                      <option value="England">England</option>
+                      <option value="Wales">Wales</option>
+                      <option value="Scotland">Scotland</option>
+                      <option value="N.Ireland">N.Ireland</option>
+                    </select>
+                  </div>
                 </li>
-                <li class="mobile-menu__subitem"><a class="mobile-menu__link" href="#">Agencies</a>
+                <li class="mobile-filter__item mobile-filter__item--active">
+                  <div class="mobile-filter__select mobile-filter__select--country">
+                    <select>
+                      <option selected="selected" disabled="disabled">Select a city</option>
+                      <option value="England">London</option>
+                      <option value="Wales">Wales</option>
+                      <option value="Scotland">Scotland</option>
+                      <option value="N.Ireland">N.Ireland</option>
+                    </select>
+                  </div>
                 </li>
-                <li class="mobile-menu__subitem"><a class="mobile-menu__link" href="#">Male Therapists</a>
+                <li class="mobile-filter__item mobile-filter__item--active">
+                  <div class="mobile-filter__select mobile-filter__select--country">
+                    <select>
+                      <option selected="selected" disabled="disabled">Select part of the city</option>
+                      <option value="England">Mayfair</option>
+                      <option value="Wales">Wales</option>
+                      <option value="Scotland">Scotland</option>
+                      <option value="N.Ireland">N.Ireland</option>
+                    </select>
+                  </div>
+                </li>
+                <li class="mobile-filter__item mobile-filter__item--active">
+                  <div class="mobile-filter__select mobile-filter__select--country">
+                    <select>
+                      <option selected="selected" disabled="disabled">Select area</option>
+                      <option value="England">Knightsbridge</option>
+                      <option value="Wales">Wales</option>
+                      <option value="Scotland">Scotland</option>
+                      <option value="N.Ireland">N.Ireland</option>
+                    </select>
+                  </div>
                 </li>
               </ul>
             </li>
@@ -234,7 +272,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="sublist__item"><a class="sublist__link" href="#">Manchester</a>
+                  <li class="sublist__item"><a class="sublist__link" href="#">Manchester </a>
                   </li>
                   <li class="sublist__item"><a class="sublist__link" href="#">York</a>
                   </li>

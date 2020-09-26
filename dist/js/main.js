@@ -1,6 +1,7 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
+  // Ширина экрана
   var windowWidth = window.innerWidth;
   var menuBtn = document.querySelector('.mobile-menu__btn');
   var menuCloseBtn = document.querySelector('.menu-close');
@@ -8,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var navigationList = document.querySelector('.navigation__list');
   var mobileMenu = document.querySelector('.mobile-menu');
   var main = document.querySelector('.main');
-  var asideMenu = document.querySelector('.menu'); // Открытие меню на мобильных устройствах
+  var asideMenu = document.querySelector('.menu');
+  var mobileFilter = document.querySelector('.mobile-filter'); // Открытие меню на мобильных устройствах
 
   function openMenu() {
     navigation.classList.add('navigation--active');
@@ -74,13 +76,27 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       parent.classList.toggle('menu__item--active');
     }
+  } // Выбор страны, города, района на мобильных устройствах
+
+
+  function chooseCityMobile(event) {
+    var target = event.target;
+
+    if (target && target.closest('.mobile-filter__item')) {
+      var parent = target.closest('.mobile-filter__item');
+      parent.classList.toggle('mobile-filter__item--open');
+    }
   }
 
   menuBtn.addEventListener('click', openMenu);
   menuCloseBtn.addEventListener('click', closeMenu);
-  navigationList.addEventListener('click', openList); // Проверяем, чтобы меню открывалось только на мобильных устройствах
+  navigationList.addEventListener('click', openList); // Проверяем, чтобы меню открывались только на мобильных устройствах
 
-  if (windowWidth <= 768) mobileMenu.addEventListener('click', openListMain); // Чтобы меню корректно работали при изменении разрешения экрана в реальном времени
+  if (windowWidth <= 768) {
+    mobileMenu.addEventListener('click', openListMain);
+    mobileFilter.addEventListener('click', chooseCityMobile);
+  } // Чтобы меню корректно работали при изменении разрешения экрана в реальном времени
+
 
   window.addEventListener('resize', function () {
     windowWidth = window.innerWidth;

@@ -11,6 +11,8 @@
 
 .main {
     padding-left: 20px;
+    // Задаем размеры для корректного отображения в IE
+    max-width: 880px;
 
     &__title {
         font-size: 24px;
@@ -21,6 +23,8 @@
 
     &__card {
         margin-bottom: 20px;
+        // Задаем размеры для корректного отображения в IE
+        max-width: 880px;
     }
 
     &__pagination {
@@ -35,6 +39,11 @@
     background-color: #ffffff;
     border: 1px solid #DCDCDC;
     border-radius: 4px;
+
+    &__inner {
+        // Задаем размеры для корректного отображения в IE
+        max-width: 880px;
+    }
 
     &__img {
         margin-right: 30px;

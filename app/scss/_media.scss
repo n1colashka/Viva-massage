@@ -359,3 +359,10 @@
         }
     }
 }
+
+// Задаем размеры для корректного отображения карточек в IE
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .card__footer-item {
+        max-width: 445px;
+    } 
+}

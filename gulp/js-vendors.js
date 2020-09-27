@@ -3,7 +3,6 @@ const concat = require('gulp-concat');
 
 const vendorsScripts = [
     // Insert libs src here:
-    'node_modules/jquery/dist/jquery.min.js'
 ];
 
 module.exports = function vendors(cb) {
